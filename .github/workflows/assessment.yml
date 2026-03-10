@@ -23,3 +23,14 @@ jobs:
 
       - name: Run Tests
         run: npm test
+
+      - name: Calculate Score
+        run: |
+          TOTAL=$(node -p "require('./test-results.json').numTotalTests")
+          PASS=$(node -p "require('./test-results.json').numPassedTests")
+          SCORE=$((PASS*100/TOTAL))
+
+          echo "Passed Tests: $PASS/$TOTAL"
+          echo "Score: $SCORE/100"
+
+          echo "SCORE=$SCORE" >> $GITHUB_ENV
