@@ -11,10 +11,10 @@ function App() {
     setInput("");
   };
 
-  const deleteTodo = (index) => {
-    const updated = todos.filter((_, i) => i !== index);
-    setTodos(updated);
-  };
+  // const deleteTodo = (index) => {
+  //   const updated = todos.filter((_, i) => i !== index);
+  //   setTodos(updated);
+  // };
 
   return (
     <div>
@@ -39,5 +39,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
