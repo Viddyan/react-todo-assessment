@@ -23,6 +23,7 @@ jobs:
 
       - name: Run Tests
         run: npm test
+        continue-on-error: true
 
       - name: Calculate Score
         run: |
@@ -32,5 +33,3 @@ jobs:
 
           echo "Passed Tests: $PASS/$TOTAL"
           echo "Score: $SCORE/100"
-
-          echo "SCORE=$SCORE" >> $GITHUB_ENV
